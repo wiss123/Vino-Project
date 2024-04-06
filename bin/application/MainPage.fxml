@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainPageController">
+   <children>
+      <TabPane layoutX="-1.0" layoutY="-1.0" prefHeight="677.0" prefWidth="917.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="MainPage">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="688.0" prefWidth="966.0">
+                     <children>
+                        <TableView fx:id="VinoTable" layoutX="349.0" layoutY="229.0" prefHeight="406.0" prefWidth="562.0" AnchorPane.rightAnchor="6.2000000000000455">
+                          <columns>
+                            <TableColumn fx:id="ColName" prefWidth="75.0" text="Nome" />
+                              <TableColumn fx:id="ColProduttore" prefWidth="75.0" text="Produttore" />
+                              <TableColumn fx:id="ColProvenienza" prefWidth="75.0" text="Provenienza" />
+                              <TableColumn fx:id="ColAnno" prefWidth="75.0" text="Anno" />
+                              <TableColumn fx:id="ColNote" prefWidth="75.0" text="Note" />
+                              <TableColumn fx:id="ColPrezzo" prefWidth="75.0" text="Prezzo" />
+                              <TableColumn fx:id="ColVitgini" prefWidth="75.0" text="Vitgini" />
+                              <TableColumn fx:id="ColDisponibile" prefWidth="75.0" text="Disponibile" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="txtNomSearch" layoutX="607.0" layoutY="172.0" prefHeight="26.0" prefWidth="262.0" />
+                        <Label layoutX="506.0" layoutY="176.0" text="Ricerca del vino" />
+                        <Button fx:id="btnAcquistare" layoutX="14.0" layoutY="194.0" mnemonicParsing="false" onAction="#Ordine" prefHeight="26.0" prefWidth="87.0" text="Acquistare" />
+                        <TableView fx:id="TableAcq" layoutX="14.0" layoutY="231.0" prefHeight="402.0" prefWidth="293.0">
+                          <columns>
+                            <TableColumn fx:id="colNomeAqc" prefWidth="75.0" text="Nome" />
+                              <TableColumn fx:id="colQuantitaAqc" onEditCommit="#OnEditChange" prefWidth="75.0" text="Quantita" />
+                              <TableColumn fx:id="ColPriceAqc" prefWidth="75.0" text="Prezzo" />
+                              <TableColumn fx:id="ColTotalAcq" prefWidth="75.0" text="total" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnLeft" layoutX="308.0" layoutY="286.0" mnemonicParsing="false" onAction="#selectVino" prefHeight="26.0" prefWidth="40.0" text="&lt;" />
+                        <Button fx:id="btnright" layoutX="308.0" layoutY="325.0" mnemonicParsing="false" onAction="#DeleteVino" prefHeight="26.0" prefWidth="40.0" text="&gt;" />
+                        <Label layoutX="266.0" layoutY="28.0" text="Acquistare dei Vini">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnProposta" layoutX="14.0" layoutY="149.0" mnemonicParsing="false" onAction="#OnProposta" prefHeight="26.0" prefWidth="87.0" text="Proposta" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Settings">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
